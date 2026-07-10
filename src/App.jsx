@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollTrigger)
 const REVEAL = [
   '.section__title',
   '.about__text p',
+  '.about__photo',
   '.about__card',
   '.skills__card',
   '.timeline__item',
