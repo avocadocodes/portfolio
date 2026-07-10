@@ -33,9 +33,10 @@ export default function Hero() {
           <i />
           {profile.availability}
         </div>
-        <p className="hero__eyebrow">Hi, I'm</p>
-        <h1 className="hero__name">{profile.name}</h1>
-        <h2 className="hero__title">{profile.title}</h2>
+        <p className="hero__eyebrow">
+          {profile.name} / {profile.title}
+        </p>
+        <h1 className="hero__statement">{profile.statement}</h1>
         <p className="hero__tagline">{profile.tagline}</p>
 
         <HeroTags />

@@ -1,11 +1,11 @@
 :root {
-  --bg: #f1efe8;
+  --bg: #f4f4f2;
   --surface: #ffffff;
-  --ink: #16130d;
-  --muted: #6f6759;
-  --line: #e0dacd;
-  --accent: #5330f0;
-  --accent-soft: rgba(83, 48, 240, 0.08);
+  --ink: #0e0e0e;
+  --muted: #6b6b6b;
+  --line: #e4e4e2;
+  --accent: #0e0e0e;
+  --accent-soft: rgba(0, 0, 0, 0.04);
 
   --radius: 14px;
   --maxw: 1080px;
@@ -181,7 +181,9 @@ a {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 128px 0 96px;
   position: relative;
   overflow: hidden;
 }
@@ -255,23 +257,19 @@ a {
 .hero__eyebrow {
   font-family: 'Space Grotesk', monospace;
   font-weight: 500;
-  color: var(--accent);
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
-}
-.hero__name {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(3rem, 11vw, 7rem);
-  line-height: 0.94;
-}
-.hero__title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.4rem, 4.5vw, 2.4rem);
   color: var(--muted);
-  margin-top: 10px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 18px;
+}
+.hero__statement {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 7vw, 5.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  max-width: 860px;
 }
 .hero__tagline {
   color: var(--ink);

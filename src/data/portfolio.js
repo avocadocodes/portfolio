@@ -1,8 +1,9 @@
 export const profile = {
   name: 'Nikita Kar',
   title: 'Full-Stack Engineer',
+  statement: 'I build scalable backend systems & clean, full-stack products.',
   tagline:
-    'I build scalable backend systems and clean, usable products with Django, PostgreSQL, AWS, and React.',
+    'Software engineer at CallHub, working across Django, PostgreSQL, AWS, and React.',
   location: 'Bengaluru, India',
   email: 'nikitakar101102@gmail.com',
   phone: '+91 6009780633',
