@@ -73,7 +73,7 @@ export default function Hero() {
         </div>
 
         <div className="hero__actions hero__reveal">
-          <a className="btn btn--primary" href="#projects">
+          <a className="btn btn--primary" href="#experience">
             View my work
           </a>
           <a className="btn btn--ghost" href="#contact">
