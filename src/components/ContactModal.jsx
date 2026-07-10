@@ -2,9 +2,16 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { profile } from '../data/portfolio.js'
 
-// Optional: paste a Formspree endpoint (e.g. https://formspree.io/f/abcdwxyz)
-// to receive messages directly in your inbox without opening the visitor's
-// mail app. Leave empty to fall back to a pre-filled mailto draft.
+// WhatsApp notifications via CallMeBot (free). One-time setup on your phone:
+//   1. Save +34 644 51 95 23 as a contact (CallMeBot).
+//   2. WhatsApp it: "I allow callmebot to send me messages"
+//   3. It replies with your personal apikey — paste it below.
+// Then every form submit pings your WhatsApp at the number below.
+const WHATSAPP_PHONE = '916009780633' // +91 6009780633, international format, no +
+const CALLMEBOT_APIKEY = '' // paste your CallMeBot apikey here to enable WhatsApp alerts
+
+// Optional fallback: a Formspree endpoint (https://formspree.io/f/abcdwxyz)
+// used only if no WhatsApp key is set. Empty => pre-filled mailto draft.
 const FORM_ENDPOINT = ''
 
 export default function ContactModal({ open, onClose }) {
@@ -28,7 +35,19 @@ export default function ContactModal({ open, onClose }) {
 
   const submit = async (e) => {
     e.preventDefault()
-    if (FORM_ENDPOINT) {
+    if (CALLMEBOT_APIKEY) {
+      setStatus('sending')
+      const text = `New portfolio message\nFrom: ${form.name} (${form.email})\n\n${form.message}`
+      const url = `https://api.callmebot.com/whatsapp.php?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(
+        text,
+      )}&apikey=${CALLMEBOT_APIKEY}`
+      try {
+        await fetch(url, { mode: 'no-cors' })
+        setStatus('sent')
+      } catch {
+        setStatus('error')
+      }
+    } else if (FORM_ENDPOINT) {
       setStatus('sending')
       try {
         const res = await fetch(FORM_ENDPOINT, {
@@ -61,7 +80,7 @@ export default function ContactModal({ open, onClose }) {
           <div className="modal__done">
             <h3>Thanks!</h3>
             <p>
-              {FORM_ENDPOINT
+              {CALLMEBOT_APIKEY || FORM_ENDPOINT
                 ? "Your message is on its way. I'll get back to you soon."
                 : "Your email draft is ready in your mail app. Hit send and I'll reply soon."}
             </p>
