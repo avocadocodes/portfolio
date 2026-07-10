@@ -1,4 +1,29 @@
-import { profile } from '../data/portfolio.js'
+import { useEffect, useState } from 'react'
+import { profile, heroTags } from '../data/portfolio.js'
+
+function HeroTags() {
+  const [active, setActive] = useState(0)
+  useEffect(() => {
+    const id = setInterval(
+      () => setActive((a) => (a + 1) % heroTags.length),
+      1400,
+    )
+    return () => clearInterval(id)
+  }, [])
+
+  return (
+    <ul className="hero__tags">
+      {heroTags.map((t, i) => (
+        <li
+          key={t}
+          className={`hero__tag ${i === active ? 'hero__tag--active' : ''}`}
+        >
+          <span>[</span> {t} <span>]</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export default function Hero() {
   return (
@@ -6,8 +31,10 @@ export default function Hero() {
       <div className="container hero__inner">
         <p className="hero__eyebrow">Hi, I'm</p>
         <h1 className="hero__name">{profile.name}</h1>
-        <h2 className="hero__title gradient-text">{profile.title}</h2>
+        <h2 className="hero__title">{profile.title}</h2>
         <p className="hero__tagline">{profile.tagline}</p>
+
+        <HeroTags />
 
         <div className="hero__meta">
           <span>{profile.location}</span>

@@ -12,6 +12,15 @@ export const profile = {
   resume: 'Nikita_Kar_Resume.pdf',
 }
 
+export const heroTags = [
+  'Django / DRF',
+  'PostgreSQL',
+  'AWS + Docker',
+  'Distributed Systems',
+  'AI-assisted workflows',
+  'React',
+]
+
 export const about = [
   "I'm a software engineer with about 1.5 years of experience building backend services that hold up under real load, currently at CallHub in Bengaluru.",
   'My day-to-day is Django REST Framework and PostgreSQL on AWS: designing APIs, tuning queries for latency, and lately building the backend that powers AI-assisted workflows. I also enjoy the frontend, and I have shipped full-stack products end to end with React.',

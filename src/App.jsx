@@ -6,6 +6,7 @@ import Experience from './components/Experience.jsx'
 import Projects from './components/Projects.jsx'
 import Achievements from './components/Achievements.jsx'
 import Contact from './components/Contact.jsx'
+import Reveal from './components/Reveal.jsx'
 
 export default function App() {
   return (
@@ -13,12 +14,24 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Achievements />
-        <Contact />
+        <Reveal>
+          <About />
+        </Reveal>
+        <Reveal>
+          <Skills />
+        </Reveal>
+        <Reveal>
+          <Experience />
+        </Reveal>
+        <Reveal>
+          <Projects />
+        </Reveal>
+        <Reveal>
+          <Achievements />
+        </Reveal>
+        <Reveal>
+          <Contact />
+        </Reveal>
       </main>
     </>
   )
