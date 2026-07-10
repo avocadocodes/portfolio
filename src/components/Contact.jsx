@@ -1,4 +1,26 @@
+import { useState } from 'react'
 import { profile } from '../data/portfolio.js'
+
+function CopyEmail() {
+  const [copied, setCopied] = useState(false)
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1600)
+    } catch {
+      window.location.href = `mailto:${profile.email}`
+    }
+  }
+  return (
+    <button
+      className={`copy-email ${copied ? 'copy-email--copied' : ''}`}
+      onClick={copy}
+    >
+      {copied ? 'Copied!' : profile.email}
+    </button>
+  )
+}
 
 export default function Contact() {
   return (
@@ -21,7 +43,7 @@ export default function Contact() {
           <a href={profile.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
           </a>
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <CopyEmail />
           <span>{profile.phone}</span>
         </div>
         <footer className="footer">

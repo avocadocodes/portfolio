@@ -29,6 +29,10 @@ export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="container hero__inner">
+        <div className="hero__status">
+          <i />
+          {profile.availability}
+        </div>
         <p className="hero__eyebrow">Hi, I'm</p>
         <h1 className="hero__name">{profile.name}</h1>
         <h2 className="hero__title">{profile.title}</h2>
@@ -66,6 +70,11 @@ export default function Hero() {
           </a>
           <a href={`mailto:${profile.email}`}>Email</a>
         </div>
+      </div>
+
+      <div className="hero__scroll">
+        <span>Scroll</span>
+        <div className="hero__scroll-line" />
       </div>
     </section>
   )

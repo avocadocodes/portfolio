@@ -1,3 +1,4 @@
+import Preloader from './components/Preloader.jsx'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -11,6 +12,7 @@ import Reveal from './components/Reveal.jsx'
 export default function App() {
   return (
     <>
+      <Preloader />
       <Nav />
       <main>
         <Hero />

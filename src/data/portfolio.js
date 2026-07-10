@@ -8,6 +8,7 @@ export const profile = {
   phone: '+91 6009780633',
   github: 'https://github.com/avocadocodes',
   linkedin: 'https://linkedin.com/in/nikitakar20212002',
+  availability: 'Available for opportunities',
   // Drop your PDF into the /public folder with this exact name to enable the download button.
   resume: 'Nikita_Kar_Resume.pdf',
 }
