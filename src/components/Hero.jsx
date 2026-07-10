@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import gsap from 'gsap'
 import { profile, heroTags } from '../data/portfolio.js'
 
 function HeroTags() {
@@ -26,26 +27,52 @@ function HeroTags() {
 }
 
 export default function Hero() {
+  useEffect(() => {
+    const tl = gsap.timeline({ delay: 1.55 })
+    tl.from('.hero__statement .word__inner', {
+      yPercent: 115,
+      duration: 1,
+      ease: 'power4.out',
+      stagger: 0.07,
+    })
+    tl.from(
+      '.hero__reveal',
+      { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out', stagger: 0.12 },
+      '-=0.6',
+    )
+    return () => tl.kill()
+  }, [])
+
+  const words = profile.statement.split(' ')
+
   return (
     <section id="top" className="hero">
       <div className="container hero__inner">
-        <div className="hero__status">
+        <div className="hero__status hero__reveal">
           <i />
           {profile.availability}
         </div>
-        <p className="hero__eyebrow">
+        <p className="hero__eyebrow hero__reveal">
           {profile.name} / {profile.title}
         </p>
-        <h1 className="hero__statement">{profile.statement}</h1>
-        <p className="hero__tagline">{profile.tagline}</p>
+        <h1 className="hero__statement">
+          {words.map((w, i) => (
+            <span className="word" key={i}>
+              <span className="word__inner">{w}</span>
+            </span>
+          ))}
+        </h1>
+        <p className="hero__tagline hero__reveal">{profile.tagline}</p>
 
-        <HeroTags />
+        <div className="hero__reveal">
+          <HeroTags />
+        </div>
 
-        <div className="hero__meta">
+        <div className="hero__meta hero__reveal">
           <span>{profile.location}</span>
         </div>
 
-        <div className="hero__actions">
+        <div className="hero__actions hero__reveal">
           <a className="btn btn--primary" href="#projects">
             View my work
           </a>
@@ -62,7 +89,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="hero__socials">
+        <div className="hero__socials hero__reveal">
           <a href={profile.github} target="_blank" rel="noreferrer">
             GitHub
           </a>
@@ -73,7 +100,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero__scroll">
+      <div className="hero__scroll hero__reveal">
         <span>Scroll</span>
         <div className="hero__scroll-line" />
       </div>
