@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { profile } from '../data/portfolio.js'
+import ContactModal from './ContactModal.jsx'
 
 function CopyEmail() {
   const [copied, setCopied] = useState(false)
@@ -23,6 +24,8 @@ function CopyEmail() {
 }
 
 export default function Contact() {
+  const [open, setOpen] = useState(false)
+
   return (
     <section id="contact" className="section section--alt">
       <div className="container contact">
@@ -33,9 +36,9 @@ export default function Contact() {
           I'm open to backend and full-stack roles. If you're hiring or just want
           to chat, my inbox is always open.
         </p>
-        <a className="btn btn--primary btn--lg" href={`mailto:${profile.email}`}>
+        <button className="btn btn--primary btn--lg" onClick={() => setOpen(true)}>
           Say hello
-        </a>
+        </button>
         <div className="contact__links">
           <a href={profile.github} target="_blank" rel="noreferrer">
             GitHub
@@ -50,6 +53,8 @@ export default function Contact() {
           Built with React and Vite by {profile.name}.
         </footer>
       </div>
+
+      <ContactModal open={open} onClose={() => setOpen(false)} />
     </section>
   )
 }

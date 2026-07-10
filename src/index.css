@@ -687,6 +687,115 @@ a {
   font-size: 0.85rem;
 }
 
+/* Contact modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(22, 19, 13, 0.45);
+  backdrop-filter: blur(4px);
+  animation: fadein 0.25s ease;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.modal__card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 38px;
+  box-shadow: 0 30px 80px rgba(22, 19, 13, 0.25);
+  animation: pop 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@keyframes pop {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.05rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.modal__close:hover {
+  color: var(--ink);
+}
+.modal__form h3,
+.modal__done h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.modal__lead,
+.modal__done p {
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.modal__form label {
+  display: block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.modal__form input,
+.modal__form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.98rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-transform: none;
+  letter-spacing: normal;
+  transition: border-color 0.2s ease;
+}
+.modal__form input:focus,
+.modal__form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.modal__form textarea {
+  resize: vertical;
+}
+.modal__form .btn,
+.modal__done .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 6px;
+}
+.modal__error {
+  color: #e0533a;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+.modal__done {
+  text-align: center;
+}
+.modal__done .btn {
+  margin-top: 18px;
+}
+
 /* Responsive */
 @media (max-width: 820px) {
   .about__grid,
