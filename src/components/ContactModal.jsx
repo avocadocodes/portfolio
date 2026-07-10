@@ -4,7 +4,7 @@ import { profile } from '../data/portfolio.js'
 
 // Paste your Formspree endpoint (e.g. https://formspree.io/f/xxxxxxx) to have
 // submissions delivered to your inbox. Empty => pre-filled mailto draft.
-const FORM_ENDPOINT = ''
+const FORM_ENDPOINT = 'https://formspree.io/f/mrewnaqr'
 
 export default function ContactModal({ open, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
