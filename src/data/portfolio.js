@@ -105,22 +105,6 @@ export const projects = [
     period: '2026',
     links: [{ label: 'GitHub', url: 'https://github.com/avocadocodes/rag-docs-api' }],
   },
-  {
-    name: 'HealthVault',
-    blurb:
-      'An e-health monitoring platform for real-time patient management with role-based access for doctors and patients, calendar scheduling, appointment booking, and a real-time analytics dashboard.',
-    stack: ['React.js', 'Express.js', 'Redux', 'TailwindCSS', 'MongoDB', 'REST APIs'],
-    period: 'Jan 2025 - Present',
-    links: [{ label: 'GitHub', url: 'https://github.com/avocadocodes' }],
-  },
-  {
-    name: 'Wallet-wiz',
-    blurb:
-      'A secure payments platform to send, receive, and request money. Transactions are tracked with unique IDs for integrity, with Redux-optimized state and real-time email notifications via Nodemailer.',
-    stack: ['React.js', 'Redux', 'Node.js', 'Express.js', 'MongoDB', 'Vercel', 'Render'],
-    period: 'Jul 2024 - Aug 2024',
-    links: [{ label: 'GitHub', url: 'https://github.com/avocadocodes' }],
-  },
 ]
 
 export const achievements = [
