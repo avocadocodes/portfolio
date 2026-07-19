@@ -65,6 +65,47 @@ export const experience = [
 
 export const projects = [
   {
+    name: 'Cohere',
+    blurb:
+      'A real-time collaboration platform where teams open a Space (a document, a whiteboard, or a live-run code IDE) and edit together live. Conflict-free multiplayer sync via CRDTs over WebSockets, live cursors and presence, sandboxed code execution streamed to a shared terminal, and full email/password auth.',
+    stack: ['React', 'Node.js', 'Express', 'Socket.IO', 'MongoDB', 'Yjs (CRDT)', 'JWT'],
+    period: '2026',
+    links: [
+      { label: 'Live App', url: 'https://cohere-nikita.netlify.app' },
+      { label: 'GitHub', url: 'https://github.com/avocadocodes/cohere' },
+    ],
+  },
+  {
+    name: 'Groundwork',
+    blurb:
+      'A multi-tenant SaaS team workspace with Kanban boards and async reports, and an "Ask your workspace" AI copilot that answers only from an organization\'s own tasks and documents, cites the exact sources it used, and refuses to answer when it is not sure instead of hallucinating.',
+    stack: ['React', 'Django REST', 'PostgreSQL', 'Celery', 'Redis', 'JWT', 'Groq'],
+    period: '2026',
+    links: [
+      { label: 'Live App', url: 'https://groundwork-nikita.netlify.app' },
+      { label: 'GitHub', url: 'https://github.com/avocadocodes/saas-project-api' },
+    ],
+  },
+  {
+    name: 'Convene',
+    blurb:
+      'A browser video-meeting platform (WebRTC) with multi-party calls, screen sharing, in-call chat, presence, and active-speaker detection, plus grounded AI meeting notes that summarize only what was actually said, with each action item backed by a quote from the transcript.',
+    stack: ['React', 'WebRTC', 'FastAPI', 'python-socketio', 'Groq'],
+    period: '2026',
+    links: [
+      { label: 'Live App', url: 'https://convene-nikita.netlify.app' },
+      { label: 'GitHub', url: 'https://github.com/avocadocodes/convene' },
+    ],
+  },
+  {
+    name: 'RAG Document Q&A API',
+    blurb:
+      'A self-verifying retrieval system: ask questions over your documents and get answers built only from your files, with citations. A per-claim faithfulness check verifies every sentence against the sources and flags anything not actually supported.',
+    stack: ['Django REST', 'PostgreSQL + pgvector', 'Sentence-Transformers', 'Hybrid search + reranking'],
+    period: '2026',
+    links: [{ label: 'GitHub', url: 'https://github.com/avocadocodes/rag-docs-api' }],
+  },
+  {
     name: 'HealthVault',
     blurb:
       'An e-health monitoring platform for real-time patient management with role-based access for doctors and patients, calendar scheduling, appointment booking, and a real-time analytics dashboard.',
